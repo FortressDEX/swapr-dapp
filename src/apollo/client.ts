@@ -8,7 +8,7 @@ export const subgraphClientsUris: { [chainId in SWPRSupportedChains]: string } =
   [ChainId.ARBITRUM_ONE]: 'https://api.thegraph.com/subgraphs/name/dxgraphs/swapr-arbitrum-one-v3',
   [ChainId.XDAI]: 'https://api.thegraph.com/subgraphs/name/dxgraphs/swapr-xdai-v2',
   [ChainId.RINKEBY]: 'https://api.thegraph.com/subgraphs/name/dxgraphs/swapr-rinkeby',
-  [ChainId.CANDLE]: 'https://api.thegraph.com/subgraphs/name/dxgraphs/swapr-rinkeby',
+  [ChainId.CANDLE]: 'https://api.thegraph.com/subgraphs/name/dxgraphs/swapr-rinkeby', // need to change
   [ChainId.ARBITRUM_RINKEBY]: 'https://api.thegraph.com/subgraphs/name/dxgraphs/swapr-arbitrum-rinkeby-v2',
 }
 
@@ -52,7 +52,7 @@ export const immediateSubgraphClients: { [chainId in SWPRSupportedChains]: Graph
   [ChainId.MAINNET]: new GraphQLClient(subgraphClientsUris[ChainId.MAINNET]),
   [ChainId.RINKEBY]: new GraphQLClient(subgraphClientsUris[ChainId.RINKEBY]),
   [ChainId.XDAI]: new GraphQLClient(subgraphClientsUris[ChainId.XDAI]),
-  [ChainId.CANDLE]: new GraphQLClient(subgraphClientsUris[ChainId.XDAI]),
+  [ChainId.CANDLE]: new GraphQLClient(subgraphClientsUris[ChainId.CANDLE]), // need to make
   [ChainId.ARBITRUM_ONE]: new GraphQLClient(subgraphClientsUris[ChainId.ARBITRUM_ONE]),
   [ChainId.ARBITRUM_RINKEBY]: new GraphQLClient(subgraphClientsUris[ChainId.ARBITRUM_RINKEBY]),
 }

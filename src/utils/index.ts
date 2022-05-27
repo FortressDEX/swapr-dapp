@@ -26,6 +26,7 @@ const ETHERSCAN_PREFIXES: { [chainId in ChainId | number]: string } = {
   4: 'rinkeby.',
   [ChainId.ARBITRUM_ONE]: '',
   [ChainId.ARBITRUM_RINKEBY]: '',
+  [ChainId.CANDLE]: '',
   [ChainId.XDAI]: '',
 }
 
@@ -35,6 +36,8 @@ const getExplorerPrefix = (chainId: ChainId) => {
       return 'https://arbiscan.io'
     case ChainId.ARBITRUM_RINKEBY:
       return 'https://testnet.arbiscan.io'
+    case ChainId.CANDLE:
+      return 'https://candleexplorer.com'
     case ChainId.XDAI:
       return 'https://blockscout.com/xdai/mainnet'
     default:
@@ -50,7 +53,7 @@ export function getExplorerLink(
   const prefix = getExplorerPrefix(chainId)
 
   // exception. blockscout doesn't have a token-specific address
-  if (chainId === ChainId.XDAI && type === 'token') {
+  if (chainId === ChainId.CANDLE && type === 'token') {
     return `${prefix}/address/${data}`
   }
 

@@ -8,6 +8,7 @@ import {
   WETH,
   DXD,
   WXDAI,
+  WCNDL, // added WCNDL
   Token,
   Currency,
   SWPR,
