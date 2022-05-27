@@ -30,6 +30,7 @@ const COINGECKO_ASSET_PLATFORM: { [chainId in ChainId]: string | null } = {
   [ChainId.ARBITRUM_RINKEBY]: null,
   [ChainId.XDAI]: 'xdai',
   [ChainId.POLYGON]: 'polygon-pos',
+  [ChainId.CANDLE]: 'candle', // CoinGecko needs to add this
 }
 
 function _fetch(chainId: ChainId, url: string, method: 'GET' | 'POST' | 'DELETE', data?: any): Promise<Response> {
