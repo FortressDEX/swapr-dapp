@@ -1,6 +1,6 @@
 import { TokenAmount, Pair, Currency, UniswapV2RoutablePlatform } from '@swapr/sdk'
 import { useMemo } from 'react'
-import { abi as IDXswapPairABI } from '@swapr/core/build/IDXswapPair.json'
+import { abi as IDXswapPairABI } from '@carthagedex/core/build/IDXswapPair.json'
 import { Interface } from '@ethersproject/abi'
 import { useActiveWeb3React } from '../hooks'
 

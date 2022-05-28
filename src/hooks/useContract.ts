@@ -14,9 +14,10 @@ import {
   SWPR_CLAIMER_ADDRESS,
   SWPR_CONVERTER_ADDRESS,
   WMATIC,
-} from '@swapr/sdk'
+  WCNDL,
+} from '@carthagedex/sdk'
 import SWPR_CONVERTER_ABI from '../constants/abis/swpr-converter.json'
-import { abi as IDXswapPairABI } from '@swapr/core/build/IDXswapPair.json'
+import { abi as IDXswapPairABI } from '@carthagedex/core/build/IDXswapPair.json'
 import { useMemo } from 'react'
 import {
   ARGENT_WALLET_DETECTOR_ABI,
@@ -72,6 +73,8 @@ function useWrappingTokenAbi(token?: Token): any | undefined {
       return WXDAI_ABI
     case WMATIC[chainId]:
       return WMATIC_ABI
+    case WCNDL[chainId]:
+      return WCNDL_ABI
     default:
       return undefined
   }

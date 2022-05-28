@@ -14,7 +14,7 @@ import {
   SWPR,
   UniswapV2RoutablePlatform,
   WMATIC,
-} from '@swapr/sdk'
+} from '@carthagedex/sdk'
 import { injected, walletConnect, walletLink } from '../connectors'
 import UniswapLogo from '../assets/svg/uniswap-logo.svg'
 import SwaprLogo from '../assets/svg/logo.svg'
@@ -148,6 +148,17 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
     AGAVE,
     BAO,
   ],
+  [ChainId.CANDLE]: [
+    WCNDL[ChainId.CANDLE],
+    WETH[ChainId.CANDLE],
+    USDC[ChainId.CANDLE],
+    USDT[ChainId.CANDLE],
+    WBTC[ChainId.CANDLE],
+    HONEY,
+    STAKE,
+    AGAVE,
+    BAO,
+  ],
   [ChainId.POLYGON]: [WMATIC[ChainId.POLYGON], USDC[ChainId.POLYGON], WBTC[ChainId.POLYGON], USDT[ChainId.POLYGON]],
 }
 
@@ -173,6 +184,7 @@ export const SUGGESTED_BASES: ChainTokenList = {
   ],
   [ChainId.ARBITRUM_RINKEBY]: [WETH[ChainId.ARBITRUM_RINKEBY], DXD[ChainId.ARBITRUM_RINKEBY]],
   [ChainId.XDAI]: [DXD[ChainId.XDAI], WETH[ChainId.XDAI], USDC[ChainId.XDAI], SWPR[ChainId.XDAI]],
+  [ChainId.CANDLE]: [DXD[ChainId.CANDLE], WETH[ChainId.CANDLE], USDC[ChainId.CANDLE], SWPR[ChainId.CANDLE]],
   [ChainId.POLYGON]: [WMATIC[ChainId.POLYGON], USDC[ChainId.POLYGON], WBTC[ChainId.POLYGON], USDT[ChainId.POLYGON]],
 }
 
@@ -183,6 +195,7 @@ export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
   [ChainId.ARBITRUM_ONE]: [WETH[ChainId.ARBITRUM_ONE], DXD[ChainId.ARBITRUM_ONE], USDC[ChainId.ARBITRUM_ONE]],
   [ChainId.ARBITRUM_RINKEBY]: [WETH[ChainId.ARBITRUM_RINKEBY], DXD[ChainId.ARBITRUM_RINKEBY]],
   [ChainId.XDAI]: [WXDAI[ChainId.XDAI], DXD[ChainId.XDAI], WETH[ChainId.XDAI], USDC[ChainId.XDAI], STAKE],
+  [ChainId.CANDLE]: [WCNDL[ChainId.CANDLE], DXD[ChainId.CANDLE], WETH[ChainId.CANDLE], USDC[ChainId.CANDLE], STAKE],
   [ChainId.POLYGON]: [WMATIC[ChainId.POLYGON], USDC[ChainId.POLYGON], WBTC[ChainId.POLYGON], USDT[ChainId.POLYGON]],
 }
 
@@ -324,6 +337,17 @@ export const NETWORK_DETAIL: { [chainId: number]: NetworkDetails } = {
     rpcUrls: ['https://rpc.gnosischain.com/'],
     blockExplorerUrls: ['https://blockscout.com/xdai/mainnet'],
   },
+  [ChainId.CANDLE]: {
+    chainId: `0x${ChainId.CANDLE.toString(16)}`,
+    chainName: 'Candle Chain',
+    nativeCurrency: {
+      name: Currency.CANDLE.name || 'Candle',
+      symbol: Currency.CANDLE.symbol || 'CNDL',
+      decimals: Currency.CANDLE.decimals || 18,
+    },
+    rpcUrls: ['https://rpc.cndlchain.com/'],
+    blockExplorerUrls: ['https://candleexplorer.com'],
+  },
   [ChainId.ARBITRUM_ONE]: {
     chainId: `0x${ChainId.ARBITRUM_ONE.toString(16)}`,
     chainName: 'Arbitrum One',
@@ -376,6 +400,9 @@ export const NETWORK_OPTIONAL_DETAIL: { [chainId: number]: NetworkOptionalDetail
     isArbitrum: false,
   },
   [ChainId.XDAI]: {
+    isArbitrum: false,
+  },
+  [ChainId.CANDLE]: {
     isArbitrum: false,
   },
   [ChainId.ARBITRUM_ONE]: {
@@ -462,6 +489,7 @@ export const ChainLabel: any = {
   [ChainId.ARBITRUM_ONE]: 'Arbitrum One',
   [ChainId.ARBITRUM_RINKEBY]: 'Arbitrum Rinkeby',
   [ChainId.XDAI]: 'Gnosis Chain',
+  [ChainId.CANDLE]: 'Candle Chain',
   [ChainId.POLYGON]: 'Polygon',
 }
 
